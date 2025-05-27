@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Arthvatech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="code"></i>
+                        <i data-lucide="terminal" class="terminal-icon"></i>
+                    </div>
+                    <div class="logo-text">Arthvatech</div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                    <a href="teams.html" class="nav-link">Teams</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-controls">
+                    <div class="theme-switch">
+                        <i data-lucide="sun"></i>
+                        <div class="switch" id="themeSwitch">
+                            <div class="switch-handle"></div>
+                        </div>
+                        <i data-lucide="moon"></i>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="teams.html" class="nav-link">Teams</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>Our <span class="gradient-text">Portfolio</span></h1>
+                <p>Discover our latest projects and see how we've helped businesses transform their digital presence with innovative solutions.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop" alt="E-Commerce Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Web Development</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A modern e-commerce solution with AI-powered recommendations.</p>
+                        <div class="tech-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop" alt="Healthcare Mobile App">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Mobile Development</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Healthcare Mobile App</h3>
+                        <p>Telemedicine app connecting patients with healthcare providers.</p>
+                        <div class="tech-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Socket.io</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" alt="Data Analytics Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Data Analytics</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Data Analytics Dashboard</h3>
+                        <p>Real-time analytics dashboard for business intelligence.</p>
+                        <div class="tech-tags">
+                            <span>Vue.js</span>
+                            <span>D3.js</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop" alt="Cloud Infrastructure">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Cloud Solutions</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Cloud Infrastructure</h3>
+                        <p>Scalable microservices architecture on AWS.</p>
+                        <div class="tech-tags">
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=300&fit=crop" alt="AI Chatbot Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">AI/ML</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>AI Chatbot Platform</h3>
+                        <p>Intelligent customer service chatbot with NLP capabilities.</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>NLP</span>
+                            <span>REST API</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" alt="Financial Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Web Development</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Financial Dashboard</h3>
+                        <p>Comprehensive financial management and reporting system.</p>
+                        <div class="tech-tags">
+                            <span>Angular</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn btn-outline">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </button>
+                            <button class="btn btn-outline">
+                                <i data-lucide="github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-cta">
+                <button class="btn btn-primary">
+                    View All Projects
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-objects">
+            <i data-lucide="code" class="footer-object obj-1"></i>
+            <i data-lucide="terminal" class="footer-object obj-2"></i>
+            <i data-lucide="settings" class="footer-object obj-3"></i>
+            <i data-lucide="code" class="footer-object obj-4"></i>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i data-lucide="code"></i>
+                            <i data-lucide="terminal" class="terminal-icon"></i>
+                        </div>
+                        <div class="logo-text">Arthvatech</div>
+                    </div>
+                    <p>Transforming businesses through innovative technology solutions.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>hello@arthvatech.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>123 Tech Street, Digital City</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Mobile Apps</li>
+                        <li>Cloud Solutions</li>
+                        <li>Cybersecurity</li>
+                        <li>Data Analytics</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe for tech insights and updates.</p>
+                    
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter email">
+                        <button><i data-lucide="arrow-right"></i></button>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Arthvatech. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
