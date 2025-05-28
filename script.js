@@ -1,4 +1,3 @@
-
 // Initialize Lucide icons
 document.addEventListener('DOMContentLoaded', function() {
     lucide.createIcons();
@@ -39,16 +38,33 @@ function initializeTheme() {
 function applyTheme(theme) {
     const body = document.body;
     const themeSwitch = document.getElementById('themeSwitch');
+    const header = document.querySelector('.header');
     
     if (theme === 'dark') {
         body.classList.add('dark');
         if (themeSwitch) {
             themeSwitch.classList.add('active');
         }
+        // Update header background for dark theme
+        if (header) {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        }
     } else {
         body.classList.remove('dark');
         if (themeSwitch) {
             themeSwitch.classList.remove('active');
+        }
+        // Update header background for light theme
+        if (header) {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.8)';
+            }
         }
     }
 }
@@ -345,15 +361,17 @@ function createFloatingAnimation() {
     });
 }
 
-// Header scroll effect
+// Header scroll effect with theme awareness
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
+    const isDarkTheme = document.body.classList.contains('dark');
+    
     if (window.scrollY > 100) {
-        header.style.background = document.body.classList.contains('dark') 
+        header.style.background = isDarkTheme 
             ? 'rgba(15, 23, 42, 0.95)' 
             : 'rgba(255, 255, 255, 0.95)';
     } else {
-        header.style.background = document.body.classList.contains('dark') 
+        header.style.background = isDarkTheme 
             ? 'rgba(15, 23, 42, 0.8)' 
             : 'rgba(255, 255, 255, 0.8)';
     }
@@ -392,13 +410,21 @@ function debounce(func, wait) {
     };
 }
 
-// Debounced scroll handler
+// Debounced scroll handler with theme awareness
 const debouncedScrollHandler = debounce(function() {
     const header = document.querySelector('.header');
+    const isDarkTheme = document.body.classList.contains('dark');
+    
     if (window.scrollY > 100) {
         header.classList.add('scrolled');
+        header.style.background = isDarkTheme 
+            ? 'rgba(15, 23, 42, 0.95)' 
+            : 'rgba(255, 255, 255, 0.95)';
     } else {
         header.classList.remove('scrolled');
+        header.style.background = isDarkTheme 
+            ? 'rgba(15, 23, 42, 0.8)' 
+            : 'rgba(255, 255, 255, 0.8)';
     }
 }, 10);
 
