@@ -1,3 +1,4 @@
+
 // Initialize Lucide icons
 document.addEventListener('DOMContentLoaded', function() {
     lucide.createIcons();
@@ -45,27 +46,45 @@ function applyTheme(theme) {
         if (themeSwitch) {
             themeSwitch.classList.add('active');
         }
-        // Update header background for dark theme
+        // Update header background for dark theme immediately
         if (header) {
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 23, 42, 0.95)';
-            } else {
-                header.style.background = 'rgba(15, 23, 42, 0.8)';
-            }
+            header.style.background = 'rgba(15, 23, 42, 0.8)';
+            header.style.borderBottom = '1px solid #334155';
         }
     } else {
         body.classList.remove('dark');
         if (themeSwitch) {
             themeSwitch.classList.remove('active');
         }
-        // Update header background for light theme
+        // Update header background for light theme immediately
         if (header) {
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.8)';
-            }
+            header.style.background = 'rgba(255, 255, 255, 0.8)';
+            header.style.borderBottom = '1px solid #e2e8f0';
         }
+    }
+    
+    // Force a style update for immediate theme change
+    updateHeaderStyle();
+}
+
+function updateHeaderStyle() {
+    const header = document.querySelector('.header');
+    const isDarkTheme = document.body.classList.contains('dark');
+    
+    if (header) {
+        if (window.scrollY > 100) {
+            header.style.background = isDarkTheme 
+                ? 'rgba(15, 23, 42, 0.95)' 
+                : 'rgba(255, 255, 255, 0.95)';
+        } else {
+            header.style.background = isDarkTheme 
+                ? 'rgba(15, 23, 42, 0.8)' 
+                : 'rgba(255, 255, 255, 0.8)';
+        }
+        
+        header.style.borderBottom = isDarkTheme 
+            ? '1px solid #334155' 
+            : '1px solid #e2e8f0';
     }
 }
 
@@ -363,19 +382,27 @@ function createFloatingAnimation() {
 
 // Header scroll effect with theme awareness
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    const isDarkTheme = document.body.classList.contains('dark');
-    
-    if (window.scrollY > 100) {
-        header.style.background = isDarkTheme 
-            ? 'rgba(15, 23, 42, 0.95)' 
-            : 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.background = isDarkTheme 
-            ? 'rgba(15, 23, 42, 0.8)' 
-            : 'rgba(255, 255, 255, 0.8)';
-    }
+    updateHeaderStyle();
 });
+
+// Debounced scroll handler
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+const debouncedScrollHandler = debounce(function() {
+    updateHeaderStyle();
+}, 10);
+
+window.addEventListener('scroll', debouncedScrollHandler);
 
 // Initialize floating animations
 createFloatingAnimation();
@@ -396,36 +423,3 @@ function updateActiveNavLink() {
 
 // Update active nav link on page load
 updateActiveNavLink();
-
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Debounced scroll handler with theme awareness
-const debouncedScrollHandler = debounce(function() {
-    const header = document.querySelector('.header');
-    const isDarkTheme = document.body.classList.contains('dark');
-    
-    if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-        header.style.background = isDarkTheme 
-            ? 'rgba(15, 23, 42, 0.95)' 
-            : 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.classList.remove('scrolled');
-        header.style.background = isDarkTheme 
-            ? 'rgba(15, 23, 42, 0.8)' 
-            : 'rgba(255, 255, 255, 0.8)';
-    }
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollHandler);
