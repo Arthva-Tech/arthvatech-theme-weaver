@@ -44,18 +44,19 @@ const Footer = () => {
   return (
     <footer className="bg-muted/30 border-t relative overflow-hidden">
       {/* Development Objects/Decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Code className="absolute top-8 left-10 h-6 w-6 text-primary/20 animate-float" />
-        <Terminal className="absolute top-16 right-20 h-8 w-8 text-primary/15 animate-pulse" />
+      <div className="absolute inset-0 pointer-events-none opacity-50">
+        <Code className="absolute top-8 left-10 h-6 w-6 text-primary/20 animate-pulse" />
+        <Terminal className="absolute top-16 right-20 h-8 w-8 text-primary/15 animate-pulse [animation-delay:1s]" />
         <Settings className="absolute bottom-12 left-1/4 h-5 w-5 text-primary/10 animate-spin [animation-duration:8s]" />
-        <Code className="absolute bottom-8 right-10 h-7 w-7 text-primary/20 animate-float [animation-delay:1s]" />
+        <Code className="absolute bottom-8 right-10 h-7 w-7 text-primary/20 animate-pulse [animation-delay:2s]" />
       </div>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        {/* Main Footer Content - Horizontal Layout */}
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
+        {/* Main Footer Content - Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6 lg:mb-8">
+          
           {/* Company Info */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative">
                 <Code className="h-6 w-6 text-primary" />
@@ -65,35 +66,35 @@ const Footer = () => {
                 Arthvatech
               </div>
             </div>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Transforming businesses through innovative technology solutions.
             </p>
             
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm">
-                <Mail className="h-3 w-3 text-primary" />
-                <span>hello@arthvatech.com</span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-sm">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                <span className="break-all">hello@arthvatech.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Phone className="h-3 w-3 text-primary" />
+              <div className="flex items-center space-x-3 text-sm">
+                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <MapPin className="h-3 w-3 text-primary" />
+              <div className="flex items-center space-x-3 text-sm">
+                <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>123 Tech Street, Digital City</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm block py-1"
                   >
                     {link.name}
                   </Link>
@@ -103,12 +104,12 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-muted-foreground text-sm">
+                  <span className="text-muted-foreground text-sm block py-1">
                     {service}
                   </span>
                 </li>
@@ -117,29 +118,29 @@ const Footer = () => {
           </div>
 
           {/* Newsletter & Social */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Subscribe for tech insights and updates.
             </p>
             
-            <div className="flex gap-2 mb-4">
+            <div className="flex flex-col sm:flex-row gap-2 mb-6">
               <input 
                 type="email" 
                 placeholder="Enter email"
-                className="flex-1 px-3 py-2 text-sm border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                className="flex-1 px-3 py-2 text-sm border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
               />
-              <Button size="sm">
+              <Button size="sm" className="w-full sm:w-auto">
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
 
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="bg-muted p-2 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="bg-muted p-2 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex-shrink-0"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
@@ -149,20 +150,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar - Horizontal */}
+        {/* Bottom Bar - Responsive */}
         <div className="border-t pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0 text-center lg:text-left">
             <p className="text-muted-foreground text-sm">
               © 2024 Arthvatech. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-4 lg:gap-6 text-sm">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
                 Terms of Service
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
                 Cookie Policy
               </a>
             </div>
