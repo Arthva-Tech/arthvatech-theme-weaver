@@ -12,8 +12,7 @@ import {
   MapPin,
   ArrowRight,
   Code,
-  Terminal,
-  Settings
+  Terminal
 } from 'lucide-react';
 
 const Footer = () => {
@@ -42,22 +41,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 text-white relative overflow-hidden">
-      {/* Development Objects/Decorations */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <Code className="absolute top-8 left-10 h-6 w-6 text-blue-400 animate-pulse" />
-        <Terminal className="absolute top-16 right-20 h-8 w-8 text-blue-300 animate-pulse" style={{ animationDelay: '1s' }} />
-        <Settings className="absolute bottom-12 left-1/4 h-5 w-5 text-blue-200 animate-spin" style={{ animationDuration: '8s' }} />
-        <Code className="absolute bottom-8 right-10 h-7 w-7 text-blue-400 animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
-
-      <div className="container mx-auto px-6 py-12 relative z-10">
+    <footer className="bg-slate-900 text-white relative">
+      <div className="container mx-auto px-6 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
               <div className="relative">
                 <Code className="h-8 w-8 text-blue-400" />
                 <Terminal className="h-4 w-4 text-purple-400 absolute -bottom-1 -right-1" />
@@ -66,35 +57,35 @@ const Footer = () => {
                 Arthvatech
               </div>
             </div>
-            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               Transforming businesses through innovative technology solutions.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                <Mail className="h-4 w-4 text-blue-400" />
                 <span>hello@arthvatech.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                <Phone className="h-4 w-4 text-blue-400" />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                <MapPin className="h-4 w-4 text-blue-400" />
                 <span>123 Tech Street, Digital City</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm block"
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -104,12 +95,12 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Services</h3>
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-gray-300 text-sm block">
+                  <span className="text-gray-300 text-sm">
                     {service}
                   </span>
                 </li>
@@ -118,13 +109,13 @@ const Footer = () => {
           </div>
 
           {/* Newsletter & Social */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Stay Connected</h3>
-            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white">Stay Connected</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
               Subscribe for tech insights and updates.
             </p>
             
-            <div className="flex gap-2 mb-6">
+            <div className="flex gap-2">
               <input 
                 type="email" 
                 placeholder="Enter email"
@@ -140,7 +131,7 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="bg-slate-800 p-3 rounded-lg hover:bg-blue-600 transition-all duration-300 flex-shrink-0"
+                  className="bg-slate-800 p-3 rounded-lg hover:bg-blue-600 transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
