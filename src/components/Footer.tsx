@@ -12,8 +12,7 @@ import {
   MapPin,
   ArrowRight,
   Code,
-  Terminal,
-  Settings
+  Terminal
 } from 'lucide-react';
 
 const Footer = () => {
@@ -22,6 +21,7 @@ const Footer = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Teams', href: '/teams' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -42,20 +42,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-muted/30 border-t relative overflow-hidden">
-      {/* Development Objects/Decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Code className="absolute top-8 left-10 h-6 w-6 text-primary/20 animate-float" />
-        <Terminal className="absolute top-16 right-20 h-8 w-8 text-primary/15 animate-pulse" />
-        <Settings className="absolute bottom-12 left-1/4 h-5 w-5 text-primary/10 animate-spin [animation-duration:8s]" />
-        <Code className="absolute bottom-8 right-10 h-7 w-7 text-primary/20 animate-float [animation-delay:1s]" />
-      </div>
-
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        {/* Main Footer Content - Horizontal Layout */}
+    <footer className="bg-muted/30 border-t">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div className="md:col-span-1">
+          <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative">
                 <Code className="h-6 w-6 text-primary" />
@@ -86,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -103,7 +94,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
@@ -117,7 +108,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter & Social */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
             <p className="text-muted-foreground text-sm mb-4">
               Subscribe for tech insights and updates.
@@ -149,7 +140,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar - Horizontal */}
+        {/* Bottom Bar */}
         <div className="border-t pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-sm">
