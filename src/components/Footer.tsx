@@ -21,7 +21,7 @@ const Footer = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Teams', href: '/teams' },
+    // { name: 'Teams', href: '/teams' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -67,12 +67,12 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-3 w-3 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 6355434658</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
+              {/* <div className="flex items-center space-x-2 text-sm">
                 <MapPin className="h-3 w-3 text-primary" />
                 <span>123 Tech Street, Digital City</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

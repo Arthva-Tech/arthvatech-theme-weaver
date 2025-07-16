@@ -7,7 +7,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { 
   Mail, 
   Phone, 
-  MapPin, 
   Clock,
   Send,
   MessageSquare,
@@ -26,14 +25,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+1 (555) 123-4567',
+      details: '+91 6355434658',
       subDetails: 'Mon-Fri 9AM-6PM',
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      details: '123 Tech Street, Digital City',
-      subDetails: 'Visit our office',
     },
     {
       icon: Clock,

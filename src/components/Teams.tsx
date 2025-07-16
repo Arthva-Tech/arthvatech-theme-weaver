@@ -7,7 +7,7 @@ import { Github, Linkedin, Twitter, Mail, Code, Database, Palette, Shield } from
 const Teams = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "Lav Patel",
       role: "Lead Developer",
       description: "Full-stack expert with 8+ years in modern web technologies",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
@@ -16,7 +16,7 @@ const Teams = () => {
       social: {
         github: "#",
         linkedin: "#",
-        email: "alex@arthvatech.com"
+        email: "lav.patel@arthvatech.com"
       }
     },
     {
