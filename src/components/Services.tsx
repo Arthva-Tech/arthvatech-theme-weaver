@@ -116,7 +116,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { apiRequest } from '../services/api';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -144,17 +144,16 @@ const Services = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get('https://localhost:7001/api/services/list')
-      .then(res => {
-        setServices(res.data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error fetching services:', err);
-        setLoading(false);
-      });
-  }, []);
+      apiRequest('get', 'Services/list')
+        .then(data => {
+          setServices(data);
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error('Error fetching projects:', err);
+          setLoading(false);
+        });
+    }, []);
 
   return (
     <section id="services" className="py-20">

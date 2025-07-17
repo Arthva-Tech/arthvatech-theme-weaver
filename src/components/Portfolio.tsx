@@ -126,20 +126,20 @@
 
 // export default Portfolio;
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { apiRequest } from '../services/api';
+
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get('https://localhost:7001/api/portfolio/projects')
-      .then(res => {
-        setProjects(res.data);
+    apiRequest('get', 'portfolio/projects')
+      .then(data => {
+        setProjects(data);
         setLoading(false);
       })
       .catch(err => {
@@ -147,6 +147,7 @@ const Portfolio = () => {
         setLoading(false);
       });
   }, []);
+
 
   return (
     <section id="portfolio" className="py-20 bg-muted/50">
